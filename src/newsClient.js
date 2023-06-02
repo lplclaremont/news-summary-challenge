@@ -8,14 +8,14 @@ class NewsClient {
   loadArticles(callback) {
     return fetch(this.url).then(response => response.json())
     .then((data) => {
-      const results = [];
+      const articles = [];
       data.response.results.forEach((result) => {
-        results.push({
+        articles.push({
           title: result.webTitle,
           link: result.webUrl
         })
       })
-      callback({"results": results});
+      callback({"articles": articles});
     })
   }
 }

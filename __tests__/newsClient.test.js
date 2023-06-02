@@ -21,7 +21,7 @@ describe('NewsClient', () => {
     });
   
     client.loadArticles((resultData) => {
-      article = resultData.results[0];
+      article = resultData.articles[0];
       expect(article.title).toEqual('My news headline');
       expect(article.link).toEqual('page URL');
       done();
