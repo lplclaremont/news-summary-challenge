@@ -5,17 +5,17 @@ class NewsClient {
     this.url = `https://content.guardianapis.com/search?api-key=${apiKey}`;
   }
 
-  loadArticles() {
+  loadArticles(callback) {
     return fetch(this.url).then(response => response.json())
     .then((data) => {
       const results = [];
-      data.results.forEach((result) => {
+      data.response.results.forEach((result) => {
         results.push({
           title: result.webTitle,
           link: result.webUrl
         })
       })
-      return {"results": results};
+      callback({"results": results});
     })
   }
 }
