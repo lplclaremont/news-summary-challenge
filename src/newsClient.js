@@ -20,4 +20,9 @@ class NewsClient {
   }
 }
 
+// const client = new NewsClient();
+// client.loadArticles((result) => {
+//   console.log(result)
+// })
+
 module.exports = NewsClient;
