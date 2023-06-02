@@ -12,7 +12,7 @@ class NewsClient {
       data.response.results.forEach((result) => {
         articles.push({
           title: result.webTitle,
-          link: result.webUrl
+          url: result.webUrl
         })
       })
       callback({"articles": articles});

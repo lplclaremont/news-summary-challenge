@@ -23,12 +23,12 @@ describe('NewsClient', () => {
     client.loadArticles((resultData) => {
       article = resultData.articles[0];
       expect(article.title).toEqual('My news headline');
-      expect(article.link).toEqual('page URL');
+      expect(article.url).toEqual('page URL');
       done();
     });
   });
 
-  it('retrieves relavent data from the API with a search term', () => {
+  it('directs user to relavent url when clicking link', () => {
 
   })
 })

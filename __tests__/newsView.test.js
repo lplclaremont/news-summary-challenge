@@ -14,17 +14,15 @@ describe('NewsView', () => {
     NewsClient.mockClear();
   });
 
-  it('displays articles onto the screen', () => {
+  it('displays articles onto the screen with link to URL', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     mockArticles = [
       {
         title: "title 1",
-        url: "url 1"
       },
       {
         title: "title 2",
-        url: "url 2"
       }
     ]
 
@@ -40,6 +38,8 @@ describe('NewsView', () => {
     articles = document.querySelectorAll('.article')
 
     expect(articles.length).toEqual(2)
+    expect(articles[0].textContent).toEqual("title 1")
+    expect(articles[1].textContent).toEqual("title 2")
   })
 
   it('displays article images onto the screen', () => {
